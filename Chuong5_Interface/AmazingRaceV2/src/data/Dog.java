@@ -30,8 +30,8 @@ public class Dog extends Pet implements DeathRacer{
 
     @Override
     public void showHowToDead() {
-        System.out.printf("|%-20s|%-10s|%4d|%4.2f|%4.1f|\n",
-                          "DOG-RACER", name, yob, weight, run());
+        System.out.printf("|%-20s|%-15s|%4d|%4.2f|%4.1f|\n",
+                          "DOG-RACER", name, yob, weight, runToDead());
     }
 
 }
