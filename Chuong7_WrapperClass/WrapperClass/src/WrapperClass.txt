@@ -1,0 +1,88 @@
+Map
+
+public class Student {
+    private String id;
+
+    private int yob;
+
+    private Integer yob;    //tốn RAM hơn
+}
+
+Map<Integer, String>
+
+================================================================================
+Class TRAI BAO - WRAPPER CLASS (BOXING/UNBOXING)
+
+OOP/JAVA CHÍNH LÀ OOP
+* MỌI THỨ TRONG CODE JAVA PHẢI LÀ OBJECT
+Hiện nay, Java có 2 loại dữ liệu: PRIMITIVE VỚI OBJECT 
+
+PRIMITIVE: byte, short, int, long, float, double, char, boolean
+8 kiểu dữ liệu nguyên thủy
+int yob = 2004; //tốn đúng 1 vùng RAM 4 bytes, ON-OFF-ON-OFF transitor để ra    được 2004
+
+OBJECT: kiểu đối tượng, trong nó phức tạp hơn, không chỉ là value lấy ra xài luôn
+        tốn 2 vùng ram. 1 con trỏ/biến object = new Object nào đó
+                        lưu tọa độ vùng new     (một loạt value khác)
+        Scanner, Math, String, Dog, Cat, Racer, Cabinet, Shelf
+        StringTokenizerm, File, FileInputStream
+        bên trong class từa lưa các thông tin + hàm() 
+
+TÌM CÁCH BIẾN JAVA THUẦN 100% OBJECT!!!
+
+số 1 2 3 4 5 7 -10  -> int
+- mô tả/đặc điểm:
+    - giá trị/đại lượng: 1, 2
+    - nguyên con, trọn vẹn không lẻ miếng nào về giá trị
+- mô tả hành động:
+    - 1 < 2
+    - 3 > 0
+    - so sánh các đại lượng của nhau được 
+
+HÓA RA ĐÁM Ở TRÊN CÓ CHUNG ĐẶC ĐIỂM LÀ KHÔNG LẺ MIẾNG NÀO, MANG 1 GIÁ TRỊ
+            CÒN SO SÁNH ĐƯỢC LẪN NHAU -> CHÚNG THUỘC NHÓM Integer
+
+class Integer xuất hiện/Nhóm những thằng không lẻ miếng nào!!!
+7 ĐỐI TƯỢNG TRÊN THUỘC NHÓM CLASS INTEGER (Integer)
+xuất hiện để bao value Integer lại thành object
+
+Integer sẽ bao cái int lại, thành 1 object. Mọi thứ trong Java là object
+public class Integer {
+    private int value;
+
+    public Integer(int value) {
+        this.value = value;
+    }
+
+    //get(), set()
+
+    //HÀM SIÊU ĐẶC BIỆT
+    public static int parseInt(String num) {
+        biến chuỗi thành số để đem xài
+    }
+    int yob = Integer.parseInt(sc.nextLine());
+}
+
+//HỒ BƠI (POOL)
+
+//Xài Integer thì sao? CỰC KỲ LINH HOẠT, CÓ NHIỀU CÁCH
+//CÂN NHẮC KHI DÙNG INTEGER, KHI NÀO ĐÒI HỎI OBJECT THÌ MỚI DÙNG, VÌ TỐN RAM
+//KHÔNG ĐẶC BIỆT GÌ CẢ int cho tiết kiệm RAM, nhanh
+
+int yob = 2004;     //4 bytes trong RAM
+Integer yob = new Integer(2004);   
+Integer yob = 2003; //new ngầm, vẫn new nhưng không viết ra 
+                    //BOXING, ĐÓNG HỘP THẰNG PRIMITVE/LITERAL
+
+int a = yob;        //thì sao? 1 thằng là con trỏ, 1 thằng là primitive 
+                    //MỞ VÙNG RAM BỰ INTEGER RA, LÔI ĐÚNG VALUE INT RA XÀI 
+                    //UNBOXING
+
+//KHI THIẾT KẾ COLLECTIONS FRAMEWORK, CÁC GIỎ Ở ĐÂY/TÚI CHỈ CHƠI VỚI OBJECT
+List<Integer> arr = new ArrayList();    //okie
+List<int>     arr = new ArrayList();    //không cho, chỉ chơi với con trỏ
+//Giỏ tao chỉ đựng object/con trỏ. int vào không chịu
+//Tao chỉ chơi với Integer
+
+PHÀM NHỮNG THỨ QUANH TA MÀ GOM NHÓM ĐƯỢC, ĐẶT TÊN CHUNG CHO NHÓM ĐƯỢC
+THÌ SẼ XUẤT HIỆN NHÓM/KHUÔN/CLASS/PHÂN LOẠI
